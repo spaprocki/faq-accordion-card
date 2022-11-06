@@ -1,149 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 /* Design system styles */
 
 :root {
-  --red: hsl(0, 78%, 62%);
-  --cyan: hsl(180, 62%, 55%);
-  --orange: hsl(34, 97%, 64%);
-  --blue: hsl(212, 86%, 64%);
-  --very-dark-blue: hsl(234, 12%, 34%);
-  --grayish-blue: hsl(229, 6%, 66%);
-  --very-light-gray: hsl(0, 0%, 98%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+  --background-gradient: linear-gradient(
+    180deg,
+    hsla(273, 75%, 66%, 1) 0%,
+    hsla(240, 74%, 65%, 1) 100%
+  );
 }
 
 body {
-  background: #fafafa;
-  font-family: 'Poppins', 'sans-serif';
-  font-size: 0.9375rem;
+  background: var(--background-gradient);
+  font-family: 'Kumbh Sans', 'sans-serif';
+  font-size: 0.75rem;
   font-weight: 400;
-  color: var(--very-dark-blue);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  min-height: 100vh;
-  padding: 0 2rem;
-}
-
-.header-section {
-  margin-top: 5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.header-heading {
-  font-weight: 200;
-  font-size: clamp(1.5rem, calc(1.2356rem + 1.12676vw), 2.25rem);
-  line-height: clamp(36px, calc(1.85rem + 1.69vw), 54px);
-  letter-spacing: clamp(0.0106rem, 0.0045vw, 0.0156rem);
-  max-width: 27.75rem;
-}
-
-.header-heading span {
-  font-weight: 600;
-}
-
-.header-paragraph {
-  margin-top: 1rem;
-  font-size: 0.9375rem;
-  line-height: 1.5625rem;
-  text-align: center;
-  letter-spacing: 0.0065rem;
-  max-width: 33.75rem;
-  color: var(--grayish-blue);
-}
-
-.main-section {
-  margin-top: clamp(4rem, -1.13vw + 5rem, 4.75rem);
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding-bottom: 5rem;
-}
-
-.cards-container {
+  color: var(--very-dark-grayish-blue);
   display: grid;
-  place-content: center;
-  gap: 1.5625rem;
-  max-width: 69.375rem;
-}
-
-.card {
-  background: #ffffff;
-  width: clamp(19.4375rem, calc(18.58rem + 3.66vw), 21.875rem);
-  height: clamp(12.1875rem, calc(10.98rem + 5.16vw), 15.625rem);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 1.75rem;
-  box-shadow: 0px 0.9375rem 1.875rem -0.6875rem rgba(131, 166, 210, 0.5);
-  border-radius: 0.5rem;
-  overflow: hidden;
+  place-items: center;
+  min-height: 100vh;
+  padding: 9.25rem 1.5rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
   position: relative;
 }
 
-.card-line {
+body::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+.card-container {
+  padding: 8.25rem 1.5rem 3rem 1.5rem;
+  background-color: #fff;
+  border-radius: 1.4375rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-hero-picture {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -107px;
+  left: 0px;
   width: 100%;
-  height: 0.2219rem;
 }
 
-.card.supervisor .card-line {
-  background-color: var(--cyan);
+.card-hero-picture img {
+  width: 72.5%;
+  margin: 0 auto;
 }
 
-.card.team-builder .card-line {
-  background-color: var(--red);
-}
-
-.card.karma .card-line {
-  background-color: var(--orange);
-}
-
-.card.calculator .card-line {
-  background-color: var(--blue);
+.box-image {
+  display: none;
 }
 
 .card-heading {
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.875rem;
+  font-size: 2rem;
+  line-height: 2.5rem;
+  color: var(--very-dark-desaturated-blue);
 }
 
-.card-paragraph {
-  margin-top: clamp(0.0625rem, calc(0.47vw - 0.05rem), 0.375rem);
-  font-size: 0.8125rem;
-  line-height: 1.4375rem;
-  letter-spacing: 0.0056rem;
-  color: var(--grayish-blue);
-  text-align: left;
-  transition: all ease 0.2s;
+.questions-list {
+  margin-top: clamp(2.375rem, 0.47vw + 2.26rem, 2.6875rem);
+  list-style-type: none;
+  min-width: 15.625rem;
+  max-width: 21.875rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.0625rem;
 }
 
-.card-image {
-  width: clamp(3.5625rem, calc(3.4rem + 0.66vw), 4rem);
-  align-self: flex-end;
-  margin-bottom: 0;
-  margin-top: auto;
+.accordion-item {
+  border-bottom: 1px solid var(--light-grayish-blue);
+  padding-bottom: 1rem;
+  width: clamp(17.4375rem, 10.94vw + 14.87rem, 21.875rem);
+}
+
+.accordion-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.question {
+  font-size: clamp(0.8125rem, 0.09vw + 0.79rem, 0.875rem);
+  line-height: clamp(1rem, 0.09vw + 0.98rem, 1.0625rem);
+  font-weight: 400;
+  transition: font-weight ease 0.2s;
+}
+
+.question:hover {
+  color: var(--soft-red);
+}
+
+.accordion-button[aria-expanded='true'] .question {
+  font-weight: 700;
+  color: var(--very-dark-desaturated-blue);
+}
+
+.icon-arrow {
+  width: 0.5rem;
+  height: 0.25rem;
+  transition: transform ease-in-out 0.3s;
+}
+
+.accordion-button[aria-expanded='true'] .icon-arrow {
+  transform: rotateX(180deg);
+}
+
+.answer {
+  margin-top: 0px;
+  color: var(--dark-grayish-blue);
+  max-height: 0;
+  overflow: hidden;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  transition: all ease 0.5s;
+}
+
+.answer.show {
+  max-height: 10rem;
+  margin-top: 0.75rem;
 }
 
 .attribution {
+  position: absolute;
   font-family: 'Montserrat', 'sans-serif';
   flex: none;
   padding: 0.625rem;
   bottom: 0px;
   width: 100%;
   text-align: center;
-  background-color: var(--soft-blue);
   color: var(--very-dark-blue-main-bg);
 }
 
@@ -158,36 +160,7 @@ body {
 }
 
 @media (min-width: 48rem) {
-  .cards-container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-  }
 }
 
 @media (min-width: 78rem) {
-  .cards-container {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-areas:
-      'supervisor team calculator'
-      'supervisor karma calculator';
-  }
-
-  .card.karma {
-    grid-area: karma;
-  }
-
-  .card.calculator {
-    grid-area: calculator;
-    align-self: center;
-  }
-
-  .card.team-builder {
-    grid-area: team;
-  }
-
-  .card.supervisor {
-    grid-area: supervisor;
-    align-self: center;
-  }
 }
