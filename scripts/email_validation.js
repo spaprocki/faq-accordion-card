@@ -13,8 +13,5 @@ Array.prototype.forEach.call(accordionHeaders, (accordionHeader) => {
       target.firstElementChild.classList.remove('show');
       setTimeout(() => (target.hidden = expanded), 501);
     }
-    /*accordionHeader.setAttribute('aria-expanded', !expanded);
-    target.hidden = expanded;
-    setTimeout(() => target.firstElementChild.classList.toggle('show'), 10);*/
   };
 });

@@ -40,7 +40,7 @@ body::-webkit-scrollbar {
 }
 
 .card-container {
-  padding: 8.25rem 1.5rem 3rem 1.5rem;
+  padding-bottom: 3rem;
   background-color: #fff;
   border-radius: 1.4375rem;
   position: relative;
@@ -49,16 +49,35 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 
+.pictures-container {
+  position: relative;
+  width: 73.4%;
+  height: clamp(104px, 11.11vw + 3.9rem, 129px);
+}
+
 .card-hero-picture {
   position: absolute;
-  top: -107px;
+  top: calc(-1 * clamp(108px, 11.11vw + 4.15rem, 133px));
   left: 0px;
   width: 100%;
+  z-index: 0;
 }
 
 .card-hero-picture img {
-  width: 72.5%;
+  width: 100%;
   margin: 0 auto;
+}
+
+.card-hero-picture::after {
+  content: '';
+  background-image: url('../images/bg-pattern-mobile.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: clamp(108px, 11.11vw + 4.15rem, 133px);
+  z-index: -1;
 }
 
 .box-image {
@@ -66,25 +85,25 @@ body::-webkit-scrollbar {
 }
 
 .card-heading {
+  margin-top: 1.75rem;
   font-size: 2rem;
   line-height: 2.5rem;
   color: var(--very-dark-desaturated-blue);
 }
 
 .questions-list {
-  margin-top: clamp(2.375rem, 0.47vw + 2.26rem, 2.6875rem);
+  margin-top: clamp(38px, 2.22vw + 1.85rem, 43px);
   list-style-type: none;
-  min-width: 15.625rem;
-  max-width: 21.875rem;
   display: flex;
   flex-direction: column;
   gap: 1.0625rem;
+  padding: 0 1.5rem;
 }
 
 .accordion-item {
   border-bottom: 1px solid var(--light-grayish-blue);
   padding-bottom: 1rem;
-  width: clamp(17.4375rem, 10.94vw + 14.87rem, 21.875rem);
+  width: clamp(279px, 31.56vw + 10.04rem, 350px);
 }
 
 .accordion-button {
@@ -98,8 +117,8 @@ body::-webkit-scrollbar {
 }
 
 .question {
-  font-size: clamp(0.8125rem, 0.09vw + 0.79rem, 0.875rem);
-  line-height: clamp(1rem, 0.09vw + 0.98rem, 1.0625rem);
+  font-size: clamp(13px, 0.44vw + 0.71rem, 14px);
+  line-height: clamp(16px, 0.44vw + 0.9rem, 17px);
   font-weight: 400;
   transition: font-weight ease 0.2s;
 }
@@ -114,13 +133,15 @@ body::-webkit-scrollbar {
 }
 
 .icon-arrow {
-  width: 0.5rem;
-  height: 0.25rem;
   transition: transform ease-in-out 0.3s;
 }
 
 .accordion-button[aria-expanded='true'] .icon-arrow {
   transform: rotateX(180deg);
+}
+
+.accordion-panel {
+  padding-right: 1rem;
 }
 
 .answer {
