@@ -174,13 +174,13 @@ body::-webkit-scrollbar {
   bottom: 0px;
   width: 100%;
   text-align: center;
-  color: var(--very-dark-blue-main-bg);
+  color: var(--light-grayish-blue);
 }
 
 .attribution a,
 .attribution a:visited {
   text-decoration: underline;
-  color: var(--very-dark-blue-main-bg);
+  color: var(--light-grayish-blue);
 }
 
 .attribution a:hover {
