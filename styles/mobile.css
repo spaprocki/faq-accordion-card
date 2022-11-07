@@ -27,7 +27,7 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  padding: 9.25rem 1.5rem;
+  padding: 2rem 1.5rem;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   position: relative;
@@ -191,7 +191,7 @@ body::-webkit-scrollbar {
   .card-container {
     flex-direction: row;
     width: clamp(40.875rem, 39.58vw + 21.88rem, 57.5rem);
-    height: clamp(24.375rem, 17.71vw + 15.88rem, 31.8125rem);
+    min-height: calc(17.71vw + 15.88rem);
     overflow: hidden;
     align-items: flex-start;
   }
@@ -230,7 +230,9 @@ body::-webkit-scrollbar {
   .text-container {
     flex: 445;
     align-items: flex-start;
-    margin-top: clamp(1.75rem, 5.51vw + -0.89rem, 4.0625rem);
+    margin: clamp(1.75rem, 5.51vw + -0.89rem, 4.0625rem) 0;
+    padding: 0;
+    align-self: center;
   }
 
   .card-heading {
