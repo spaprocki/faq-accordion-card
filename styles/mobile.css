@@ -40,7 +40,6 @@ body::-webkit-scrollbar {
 }
 
 .card-container {
-  padding-bottom: 3rem;
   background-color: #fff;
   border-radius: 1.4375rem;
   position: relative;
@@ -82,6 +81,14 @@ body::-webkit-scrollbar {
 
 .box-image {
   display: none;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3rem;
 }
 
 .card-heading {
@@ -181,7 +188,66 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 48rem) {
-}
+  .card-container {
+    flex-direction: row;
+    width: clamp(40.875rem, 39.58vw + 21.88rem, 57.5rem);
+    height: clamp(24.375rem, 17.71vw + 15.88rem, 31.8125rem);
+    overflow: hidden;
+    align-items: flex-start;
+  }
 
-@media (min-width: 78rem) {
+  .pictures-container {
+    margin-top: clamp(28px, 5.51vw + -0.89rem, 65px);
+    flex: 475;
+  }
+
+  .card-hero-picture {
+    top: 0;
+    left: -17.68%;
+  }
+
+  .card-hero-picture::after {
+    background-image: url('../images/bg-pattern-desktop.svg');
+    right: 0;
+    top: -100%;
+    width: 204%;
+    height: 263%;
+  }
+
+  .card-hero-picture::before {
+    background-image: url('../images/illustration-box-desktop.svg');
+    content: '';
+    width: clamp(7.375rem, 10.86vw + 2.16rem, 11.9375rem);
+    height: clamp(7.125rem, 10.42vw + 2.13rem, 11.5rem);
+    margin-top: clamp(104px, 4.76vw + 4.21rem, 136px);
+    margin-left: calc(-1 * clamp(0.1px, 1.79vw + -0.86rem, 12px));
+    margin-right: auto;
+    position: fixed;
+    background-size: cover;
+    background-position: top center;
+  }
+
+  .text-container {
+    flex: 445;
+    align-items: flex-start;
+    margin-top: clamp(1.75rem, 5.51vw + -0.89rem, 4.0625rem);
+  }
+
+  .card-heading {
+    margin-top: 0;
+  }
+
+  .questions-list {
+    margin-top: clamp(38px, 0.6vw + 2.15rem, 43px);
+    padding: 0;
+  }
+
+  .accordion-item {
+    width: clamp(279px, 8.45vw + 14.27rem, 350px);
+  }
+
+  .question {
+    font-size: clamp(13px, 0.12vw + 0.77rem, 14px);
+    line-height: clamp(16px, 0.12vw + 0.96rem, 17px);
+  }
 }
