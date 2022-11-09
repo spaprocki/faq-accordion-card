@@ -208,10 +208,14 @@ body::-webkit-scrollbar {
     position: static;
     align-self: stretch;
     height: auto;
+    display: flex;
   }
 
   .card-hero-picture {
-    top: /*clamp(28px, 5.51vw + -0.89rem, 65px)*/ 13.72%;
+    top: 0;
+    /*top: clamp(28px, 5.51vw + -0.89rem, 65px) 13.72%;*/
+    margin-top: auto;
+    margin-bottom: auto;
     left: -17.68%;
     position: relative;
     overflow: visible;
@@ -225,13 +229,23 @@ body::-webkit-scrollbar {
     height: 263%;
   }
 
+  .box-image-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: clamp(7.375rem, 10.86vw + 2.16rem, 11.9375rem);
+    display: flex;
+  }
+
   .box-image {
     width: clamp(7.375rem, 10.86vw + 2.16rem, 11.9375rem);
     height: clamp(7.125rem, 10.42vw + 2.13rem, 11.5rem);
-    top: /*clamp(127px, 11.76vw + 2.29rem, 206px)*/ 40%;
-    transform: translateX(-50%);
-    position: absolute;
+    top: /*clamp(127px, 11.76vw + 2.29rem, 206px)*/ 50%;
+    transform: translateX(-50%) translateY(25%);
+    /*position: absolute;*/
     display: block;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .text-container {
