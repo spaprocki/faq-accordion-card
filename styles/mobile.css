@@ -27,7 +27,7 @@ body {
   display: grid;
   place-items: center;
   min-height: 100vh;
-  padding: 2rem 1.5rem;
+  padding: 9rem 1.5rem;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   position: relative;
@@ -188,22 +188,33 @@ body::-webkit-scrollbar {
 }
 
 @media (min-width: 48rem) {
+  main {
+    position: relative;
+  }
+
   .card-container {
     flex-direction: row;
     width: clamp(40.875rem, 39.58vw + 21.88rem, 57.5rem);
     min-height: calc(17.71vw + 15.88rem);
     overflow: hidden;
     align-items: flex-start;
+    position: static;
   }
 
   .pictures-container {
-    margin-top: clamp(28px, 5.51vw + -0.89rem, 65px);
+    /*margin-top: clamp(28px, 5.51vw + -0.89rem, 65px);*/
     flex: 475;
+    /*min-height: calc(17.71vw + 15.88rem)*/
+    position: static;
+    align-self: stretch;
+    height: auto;
   }
 
   .card-hero-picture {
-    top: 0;
+    top: /*clamp(28px, 5.51vw + -0.89rem, 65px)*/ 13.72%;
     left: -17.68%;
+    position: relative;
+    overflow: visible;
   }
 
   .card-hero-picture::after {
@@ -214,17 +225,13 @@ body::-webkit-scrollbar {
     height: 263%;
   }
 
-  .card-hero-picture::before {
-    background-image: url('../images/illustration-box-desktop.svg');
-    content: '';
+  .box-image {
     width: clamp(7.375rem, 10.86vw + 2.16rem, 11.9375rem);
     height: clamp(7.125rem, 10.42vw + 2.13rem, 11.5rem);
-    margin-top: clamp(104px, 4.76vw + 4.21rem, 136px);
-    margin-left: calc(-1 * clamp(0.1px, 1.79vw + -0.86rem, 12px));
-    margin-right: auto;
-    position: fixed;
-    background-size: cover;
-    background-position: top center;
+    top: /*clamp(127px, 11.76vw + 2.29rem, 206px)*/ 40%;
+    transform: translateX(-50%);
+    position: absolute;
+    display: block;
   }
 
   .text-container {
