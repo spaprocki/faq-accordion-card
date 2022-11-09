@@ -116,20 +116,17 @@ body::-webkit-scrollbar {
   background-color: transparent;
   border: none;
   cursor: pointer;
-}
-
-.question {
   font-size: clamp(13px, 0.44vw + 0.71rem, 14px);
   line-height: clamp(16px, 0.44vw + 0.9rem, 17px);
   font-weight: 400;
   transition: font-weight ease 0.2s;
 }
 
-.question:hover {
+.accordion-button:hover {
   color: var(--soft-red);
 }
 
-.accordion-button[aria-expanded='true'] .question {
+.accordion-button[aria-expanded='true'] {
   font-weight: 700;
 }
 
